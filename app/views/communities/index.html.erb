@@ -1,0 +1,81 @@
+<h1><%= t '.title' %></h1>
+  	<div class="content container">
+  		<div class="itemsList">
+  			<% if @communities.empty? %>
+  				<div class="listItem row">
+  					<h2><%= t '.nil_communities' %></h2>
+  				</div>
+				  
+  			<% else %>
+
+										<!-- Start mainWindow -->
+						<div class="mainWindow hsoub-container">
+						<!-- Start contentWindow -->
+						<div class="contentWindow hsoub-content">
+							<!-- Start page content -->
+							
+							<div class="container-fluid main">
+							
+							<div class="row container-box">
+								<div class="title--main title_with_tabs communities">
+					</div>
+					<!-- Start communities tabs -->
+					<div class="clr"></div>
+					<div class="communitiesTabs col-xs-12">
+					<!--  Start Tab  -->
+					<!-- Start Tabs -->
+					<ul class="nav nav-tabs " role="tablist">
+					<li role="presentation" class="active">
+						<a href="#" aria-controls="active" role="tab"> الأكثر نشاطا </a>
+					</li>
+					<li role="presentation" class="">
+						<a href="#" aria-controls="new" role="tab">الأحدث</a>
+					</li>
+
+					</ul>
+					<!-- End Tabs -->
+
+
+
+	  			<% @communities.each do |community| %>
+
+		  			
+						<%# change After %>
+						
+						
+					   <div role="tabpanel">
+						<!-- Start Tab panes -->
+						<div class="tab-content">
+						<div role="tabpanel" class="row tab-pane fade in active communityCardsBlocks" id="follow">
+							<!--  Strat Community Card -->
+					<div class="col-xs-12 col-md-3">
+					<div class="communityCard" id="community-8" data-community-slug="culture">
+					<div class="communityCardHeader">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" data-action="closelightBoxCommunity" data-slug=culture >
+						<span aria-hidden="true">×</span>
+						</button>
+						<h2><%= link_to community.name, community_path(community) %></h2>
+					</div>
+					<div class="communityCardBody">
+						<p class="line_clamp_content"> <%= community.description %> </p>
+						<div class="cardDesc">
+						<div>
+						</div>
+						<div class="communityFollower">
+							<span> <%= community.follows.size %> </span>
+							<span>متابع</span>
+						</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					<!--  End Community Card -->
+		
+
+					  	<%# change before %>
+				  <% end %>
+			  <% end %>
+  		</div>
+  	</div>
+</table>
+</br>

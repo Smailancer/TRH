@@ -1,0 +1,39 @@
+<h2> <%= " " + @community.name %></h2>
+<p> <%= @community.follows.size %> مليون متابع . <%= @community.description %> </p>
+<% unless current_user&.communities.include? @community %>
+	<%= link_to t('follow'), follow_community_path(@community), method: :post, class: 'btn btn-success' %>
+<% else %>
+	<%= link_to t('unfollow'), unfollow_community_path(@community), method: :post, class: 'btn btn-danger' %>
+<% end %>
+<div class="content container">
+	<div class="itemsList">
+		<% if @posts.empty? %>
+			<div class="listItem row">
+				<h2><%= t '.nil_posts' %></h2>
+			</div>
+		<% else %>
+			<%= render @posts %>
+		<% end %>
+	</div>
+</div>
+</br>
+
+<div class="content container">
+	<div class="itemsList">
+	<div class="listItem row">
+		<h3> آخر التعليقات </h3>
+			
+		
+		
+	</div>
+</div>
+
+<div class="content container">
+	<div class="itemsList">
+	<div class="listItem row">
+		<h3> أفضل المساهمين  </h3>
+			
+
+		
+	</div>
+</div>
