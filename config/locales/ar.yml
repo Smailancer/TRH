@@ -67,6 +67,8 @@ ar:
       nil_posts: "لا يوجد أي مساهمات في هذا المجتمع بعد!"
     index:
       title: "المجتمعات"
+    edit:
+      edit_community: 'تعديل المجتمع'
   users:
     show:
       title: "العنوان"

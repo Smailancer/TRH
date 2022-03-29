@@ -46,6 +46,6 @@ class TopicsController < ApplicationController
   end
 
   def authenticate_moderator
-    redirect_to root_path, notice: t('not_authorized') unless current_user && current_user.moderator?
+    redirect_to root_path, notice: t('not_authorized') unless current_user && current_user.moderator? || current_user.admin?
   end
 end

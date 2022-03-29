@@ -10,6 +10,8 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
     comments: Field::HasMany,
+    follows: Field::HasMany,
+    communities: Field::HasMany,
     votes: Field::HasMany,
     id: Field::Number,
     email: Field::String,
@@ -26,6 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
     language: Field::String,
     gender: Field::String,
     birth_date: Field::Date,
+    role: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,8 +39,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     posts
     comments
-    votes
-    id
+    follows
+    communities
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,6 +48,8 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     posts
     comments
+    follows
+    communities
     votes
     id
     email
@@ -61,6 +66,7 @@ class UserDashboard < Administrate::BaseDashboard
     language
     gender
     birth_date
+    role
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -69,6 +75,8 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     posts
     comments
+    follows
+    communities
     votes
     email
     encrypted_password
@@ -82,6 +90,7 @@ class UserDashboard < Administrate::BaseDashboard
     language
     gender
     birth_date
+    role
   ].freeze
 
   # COLLECTION_FILTERS

@@ -9,6 +9,8 @@ class CommunityDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
+    follows: Field::HasMany,
+    users: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     description: Field::Text,
@@ -23,15 +25,17 @@ class CommunityDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     posts
+    follows
+    users
     id
-    name
-    description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     posts
+    follows
+    users
     id
     name
     description
@@ -44,6 +48,8 @@ class CommunityDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     posts
+    follows
+    users
     name
     description
   ].freeze

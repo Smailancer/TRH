@@ -16,12 +16,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "communities";
 @import url(//fonts.googleapis.com/earlyaccess/notonaskharabic.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap');
 
 body {
     direction: rtl;
-    font-family: "Noto Naskh Arabic", verdana, Times, serif;
+    font-family: 'Noto Kufi Arabic', sans-serif, verdana, Times;
     font-size: 16px;
     line-height: 1.42857;
     color: #484848;

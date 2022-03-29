@@ -15,6 +15,19 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  def edit
+    @community = Community.find_by_id(params[:id])
+  end
+
+  def update
+    @community = Community.find_by_id(params[:id])
+    if @community.update(community_params)
+      redirect_to @community
+    else 
+      render :edit 
+    end
+  end
+
   def index
     @communities = Community.all
   end

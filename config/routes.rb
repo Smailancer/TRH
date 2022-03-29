@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
 
-  mount Notifications::Engine => "/notifications"
   namespace :admin do
+      resources :notifications
       resources :users
       resources :comments
       resources :communities
+      resources :follows
       resources :links
-      resources :posts do 
-        resources :comments
-        member do
-          post :vote 
-        end
-      end
+      resources :posts
       resources :topics
 
-      root to: "users#index"
+      root to: "notifications#index"
     end
+  mount Notifications::Engine => "/notifications"
+ 
+  
   get 'users/show'
   get 'comments/create'
   root 'home#index'

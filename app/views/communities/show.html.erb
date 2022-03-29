@@ -1,10 +1,11 @@
 <h2> <%= " " + @community.name %></h2>
-<p> <%= @community.follows.size %> مليون متابع . <%= @community.description %> </p>
+<p> <%= @community.follows.size %> مليون متابع | <%= @community.description %> </p>
 <% unless current_user&.communities.include? @community %>
 	<%= link_to t('follow'), follow_community_path(@community), method: :post, class: 'btn btn-success' %>
 <% else %>
 	<%= link_to t('unfollow'), unfollow_community_path(@community), method: :post, class: 'btn btn-danger' %>
 <% end %>
+		<%= link_to t('edit'), edit_community_path(@community), class: 'btn btn-info' %>
 <div class="content container">
 	<div class="itemsList">
 		<% if @posts.empty? %>
@@ -23,8 +24,8 @@
 	<div class="listItem row">
 		<h3> آخر التعليقات </h3>
 			
-		
-		
+		<p>خاصية قيد الانشاء</p>
+	</div>
 	</div>
 </div>
 
@@ -33,7 +34,11 @@
 	<div class="listItem row">
 		<h3> أفضل المساهمين  </h3>
 			
-
-		
+		<p>خاصية قيد الانشاء</p>
+	</div>
 	</div>
 </div>
+
+
+
+
