@@ -37,9 +37,11 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    id
+    email
+    role
     posts
     comments
-    follows
     communities
   ].freeze
 
@@ -50,7 +52,7 @@ class UserDashboard < Administrate::BaseDashboard
     comments
     follows
     communities
-    votes
+   
     id
     email
     encrypted_password
@@ -77,7 +79,7 @@ class UserDashboard < Administrate::BaseDashboard
     comments
     follows
     communities
-    votes
+    
     email
     encrypted_password
     reset_password_token

@@ -9,7 +9,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'ancestry'
 gem 'acts_as_votable'
-gem 'administrate'
+gem 'administrate', '~> 0.17.0'
 gem 'notifications'
 gem 'friendly_id'
 gem 'bootstrap-sass', '~> 3.4.1'
@@ -22,14 +22,14 @@ gem 'rails', '~> 5.2.7'
 # Use Puma as the app server
 gem 'puma', '~> 3.12.6'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.1.0'
+# gem 'sass-rails', '~> 5.1.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 4.2.0'
+# gem 'uglifier', '>= 4.2.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -61,12 +61,20 @@ end
 group :production do
   gem 'pg', '~> 1.3', '>= 1.3.4'
 end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :assets do
+  gem 'therubyracer'
+  gem 'sass-rails', '~> 5.1.0'
+  gem 'coffee-rails', '~> 4.2'
+  gem 'uglifier'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
