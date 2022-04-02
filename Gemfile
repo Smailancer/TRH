@@ -22,14 +22,14 @@ gem 'rails', '~> 5.2.7'
 # Use Puma as the app server
 gem 'puma', '~> 3.12.6'
 # Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.1.0'
+
 # Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 4.2.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.2'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -61,7 +61,6 @@ end
 group :production do
   gem 'pg', '~> 1.3', '>= 1.3.4'
 end
-
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -74,8 +73,9 @@ group :assets do
   gem 'therubyracer'
   gem 'sass-rails', '~> 5.1.0'
   gem 'coffee-rails', '~> 4.2'
-  gem 'uglifier'
+  gem 'uglifier', '>= 4.2.0'
 end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

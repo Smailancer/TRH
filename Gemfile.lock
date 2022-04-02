@@ -290,7 +290,7 @@ DEPENDENCIES
   therubyracer
   turbolinks (~> 5.2.1)
   tzinfo-data
-  uglifier
+  uglifier (>= 4.2.0)
   web-console (>= 3.3.0)
 
 BUNDLED WITH
